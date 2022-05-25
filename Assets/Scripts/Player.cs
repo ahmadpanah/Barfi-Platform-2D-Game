@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     private Vector3 rotation;
 
     private CoinManagment m;
+
+    public GameObject panel;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -66,6 +68,11 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "coin") {
             m.Addmoney();
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Spike") {
+
+            panel.SetActive(true);
+            Destroy(gameObject);
         }
     }
 
