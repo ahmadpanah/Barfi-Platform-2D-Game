@@ -62,6 +62,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ground") {
             isgrounded = true;
         }
+         if (collision.gameObject.tag == "Enemy") {
+            panel.SetActive(true);
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
