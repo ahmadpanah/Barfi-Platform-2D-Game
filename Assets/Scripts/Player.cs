@@ -13,11 +13,14 @@ public class Player : MonoBehaviour
 
     private Animator anim;
     private Vector3 rotation;
+
+    private CoinManagment m;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         rotation = transform.eulerAngles;
+        m = GameObject.FindGameObjectWithTag("Text").GetComponent<CoinManagment>();
     }
 
     // Update is called once per frame
@@ -58,4 +61,12 @@ public class Player : MonoBehaviour
             isgrounded = true;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "coin") {
+            m.Addmoney();
+            Destroy(other.gameObject);
+        }
+    }
+
 }
