@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour
     private CoinManagment m;
 
     public GameObject panel;
+
+    public GameObject camera;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -57,6 +60,8 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
             isgrounded = false;
         }
+
+        camera.transform.position = new Vector3(transform.position.x , 0 , -10);
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "ground") {
@@ -77,6 +82,10 @@ public class Player : MonoBehaviour
 
             panel.SetActive(true);
             Destroy(gameObject);
+        }
+
+          if (other.gameObject.tag == "Finish") {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
