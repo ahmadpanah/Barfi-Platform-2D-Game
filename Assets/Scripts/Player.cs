@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private CoinManagment m;
 
     public GameObject panel;
+    public GameObject fire;
 
     public GameObject camera;
     void Start()
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
             isgrounded = true;
         }
          if (collision.gameObject.tag == "Enemy") {
+            Instantiate(fire, transform.position , Quaternion.identity);
             panel.SetActive(true);
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().Play("Die");
@@ -82,6 +84,7 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Spike") {
 
+            Instantiate(fire, transform.position , Quaternion.identity);
             panel.SetActive(true);
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().Play("Die");

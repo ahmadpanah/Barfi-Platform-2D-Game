@@ -926,6 +926,7 @@ MonoBehaviour:
   speed: 5
   jump: 7
   panel: {fileID: 1981408404}
+  fire: {fileID: 4271504663443282905, guid: 928a0bd66d48c9d4995b271b490b6de6, type: 3}
   camera: {fileID: 519420028}
 --- !u!50 &783357658
 Rigidbody2D:
