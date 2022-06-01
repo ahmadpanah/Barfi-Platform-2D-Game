@@ -70,6 +70,7 @@ public class Player : MonoBehaviour
          if (collision.gameObject.tag == "Enemy") {
             panel.SetActive(true);
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().Play("Die");
         }
     }
 
@@ -77,11 +78,13 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "coin") {
             m.Addmoney();
             Destroy(other.gameObject);
+            FindObjectOfType<AudioManager>().Play("Coin");
         }
         if (other.gameObject.tag == "Spike") {
 
             panel.SetActive(true);
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().Play("Die");
         }
 
           if (other.gameObject.tag == "Finish") {

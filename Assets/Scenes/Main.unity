@@ -1024,15 +1024,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Coin
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: afcc095326d003e48bc0ef2937c0bc36, type: 3}
     volume: 1.39
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Die
+    clip: {fileID: 8300000, guid: 3e40044c381d1004f8127190a02598a2, type: 3}
+    volume: 1.1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1035121824

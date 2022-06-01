@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+  - coin
+  - Text
+  - Spike
+  - Enemy
   layers:
   - Default
   - TransparentFX
